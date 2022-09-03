@@ -97,12 +97,12 @@ Branch.prototype =
         if(this.parent)
             this.ugrow = Math.max(0, this.ugrow - (1 - Math.min(1, this.parent.ugrow/this.upos)));
         
-        if(
+       /*  if(
             this.twigRule && this.sub.length == 0 && this.ugrow >= 1 &&
             this.bounds.hyp >= minLengthToSpawn && this.bounds.hyp < viewBounds.hyp
         ){
             this.multiTwig();
-        }
+        } */
         
         for(var i=this.leaves.length; --i >= 0;)
             this.leaves[i].update();

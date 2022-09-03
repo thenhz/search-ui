@@ -84,6 +84,7 @@ function initRoot()
     root = new Branch({
         style: paintStyle,
         twigRule: {
+            // number of branches
             nbr:    [8],
             ncv:    [16, 16, 16, 16],
             angle:  [rand2(-Math.PI, Math.PI) * 0.33],
@@ -141,7 +142,7 @@ function justDraw()
         branches[i].draw();
     }
     if(mouseBranch) {
-        mouseBranch.update();
+        //mouseBranch.update();
         mouseBranch.draw();
     }
     
@@ -156,6 +157,7 @@ function justDraw()
             lerp(origin.x, ccv.x, 0.25),
             lerp(origin.y, ccv.y, 0.25)
         );
+        closest.color = [240,128,128,255]
     }
     
     
@@ -359,6 +361,7 @@ function sortByClosestToMouse()
     for(var i = branches.length; --i >= 0;) {
         var ctr_cv = branches[i].cv[Math.floor(branches[i].cv.length / 2)];
         branches[i].distToMouse = Vec2.distSq(mouse, ctr_cv);
+        branches[i].color = [255,255,255,255]
     }
     
     // sort the array
